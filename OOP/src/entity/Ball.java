@@ -12,6 +12,10 @@ import javax.swing.JLabel;
 import java.util.Random;
 
 public class Ball extends JLabel{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Point vitri = new Point();
 	private Point chieu = new Point(0, -1);
 	
@@ -38,7 +42,7 @@ public class Ball extends JLabel{
 		
 		BufferedImage image = null;
 		try {
-			image = ImageIO.read(new File("src/data/Capture.png"));
+			image = ImageIO.read(new File("data/1.png"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

@@ -1,19 +1,17 @@
 import java.awt.geom.*;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-
-import javax.imageio.ImageIO;
 import javax.swing.*;
-
-import entity.Ball;
-
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import entity.*;
 
 public class FrameX extends JFrame implements KeyListener {
-	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private SpaceShip ship = new SpaceShip();
+	private int numberOfBalls = 0;
 	public FrameX() {
 //		Default format
 		setSize(1024, 512);
@@ -25,6 +23,10 @@ public class FrameX extends JFrame implements KeyListener {
 	    setResizable(false);
 	    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setVisible(true);
+		
+//		Declare variable
+		add(ship);
+		ship.configure(490, 400, 15, 15);
 		
 		this.addKeyListener(this);
 	}
@@ -43,22 +45,28 @@ public class FrameX extends JFrame implements KeyListener {
 		@Override
 	    public void keyPressed(KeyEvent e) {
 	        if (e.getKeyCode() == 32) {
-	        	System.out.println(1);
 	        	Thread thread = new Thread() {
 					public void run() {
-			        	Ball ball = new Ball("o", 1);
-			    		ball.setSize(9, 9);
-			    		ball.setLocation(500, 400);
-			    		ball.setVisible(true);
-			    		add(ball);
-			    		ball.move();
+						if(numberOfBalls < 3) {
+							numberOfBalls++;
+							Ball ball = new Ball("", 0);
+							Point point = ship.getLocation();
+							ball.configure(point.x, point.y, 10, 10);
+				    		add(ball);
+				    		ball.move();
+				    		numberOfBalls--;
+						}
 					}
 				};
 				thread.start();
 	        }
 	        
-	        if (e.getKeyCode() != 0) {
-	        	System.out.println(e.getKeyCode());
+	        if (e.getKeyCode() == 37) {
+	        	ship.move(-1);
+	        }
+	        
+	        if (e.getKeyCode() == 39) {
+	        	ship.move(1);
 	        }
 	        
 	    }
