@@ -5,9 +5,9 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Frame extends JFrame{
+	
 	public Frame() {
 		setLayout(new FlowLayout());
-		
 //		Default format
 		setSize(1024, 512);
 		setTitle("Chao mung den voi con game dan don");

@@ -29,10 +29,11 @@ public class Ball extends JLabel{
 	    ImageIcon icon = new ImageIcon(image.getScaledInstance(10, 10, Image.SCALE_SMOOTH));
 	    setIcon(icon);
 	    setLayout(null);
-	    setVisible(true);
+	    setVisible(false);
 	}
 	
 	public void move() {
+		setVisible(true);
 	    while(vitri.y > 0) {
 	    	vitri.x += chieu.x;
 	    	vitri.y += chieu.y;
