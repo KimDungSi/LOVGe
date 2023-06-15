@@ -1,0 +1,6 @@
+#ship{
+	-fx-display: flex;
+	-fx-justify-content: center;
+	-fx-position: relative;
+	-fx-top: 800-100;
+}

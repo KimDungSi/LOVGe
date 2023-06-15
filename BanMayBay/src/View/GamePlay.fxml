@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="GamePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.GamePlayController">
+   <children>
+      <ImageView fx:id="background" fitHeight="4000.0" fitWidth="600.0" layoutY="-2200.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resourses/background/Space%20Background3.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="257.0" fitWidth="656.0" layoutX="-8.0" layoutY="116.0" opacity="0.9" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resourses/background/clouds-transparent.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="257.0" fitWidth="656.0" layoutX="-8.0" layoutY="-79.0" opacity="0.9" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resourses/background/clouds-transparent.png" />
+         </image>
+      </ImageView>
+      <Text fill="WHITE" layoutX="27.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bullets: ">
+         <font>
+            <Font name="Berlin Sans FB" size="36.0" />
+         </font>
+      </Text>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text fx:id="bullet" fill="WHITE" layoutX="43.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+         <font>
+            <Font name="Berlin Sans FB" size="32.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
